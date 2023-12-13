@@ -1,17 +1,17 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Donors from "./Donors";
 
 
 const DonorInfoPage = () => {
-  const [userArr, setUserArr] = useState([]);
+  const [donorArr, setDonorArr] = useState([]);
   const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     axios
       .get('https://dummyjson.com/users')
       .then((response) => {
-        setUserArr(response.data.users);
+        setDonorArr(response.data.users);
         console.log('response', response.data.users)
         setIsLoading(false)
       })
@@ -22,14 +22,15 @@ const DonorInfoPage = () => {
     return <div>Donor list is loading, please wait</div>;
   }
 
-  const mappedDonors = userArr.map((donor) => (
+  const mappedDonors = donorArr.map((donor) => (
     <Donors
-      key={donor.id} 
-      image={donor.image}
+      
+    name={donor.firstName}
+    key={donor.id}
     />
   ));
 
-  return <div>{mappedDonors}</div>;
+  return <><div>{mappedDonors}</div></>;
 };
 
 export default DonorInfoPage;

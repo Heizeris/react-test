@@ -1,16 +1,16 @@
+import {Card} from "react-bootstrap"
 
 
-
-
-const Donors = ({image, firstName, lastName, maidenName, age, email, phone, username, birthDate, bloodGroup}) =>{
+export const Donors = ({image, firstName, lastName, maidenName, age, email, phone, username, birthDate, bloodGroup}) =>{
 
 
 
     return(
         <>
-        <Card>
+        <Card style={{ width: '18rem'}}>
 <Card.Img variant="top" src={image[0]}/>
 <Card.Body>
+    <Card.Title>Donor Info</Card.Title>
 <Card.firstname>{firstName}</Card.firstname>
 <Card.lastName>{lastName}</Card.lastName>
 <Card.middleName>{maidenName}</Card.middleName>
