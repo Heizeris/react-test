@@ -8,7 +8,7 @@ export const Donors = ({image, firstName, lastName, maidenName, age, email, phon
     return(
         <>
         <Card style={{ width: '18rem'}}>
-<Card.Img variant="top" src={image[0]}/>
+<Card.Img variant="top" src={image[{image}]}/>
 <Card.Body>
     <Card.Title>Donor Info</Card.Title>
 <Card.firstname>{firstName}</Card.firstname>
